@@ -48,6 +48,9 @@ h2 {
 #hero .heroText h1{
     color: white;
 }
+#hero .heroText p{
+    display: none;
+}
 /* End of Hero Section */
 
 /* Header section */
@@ -192,7 +195,7 @@ h2 {
 }
 #main .content{
     display: flex;
-    width: 85vw;
+    width: 100vw;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -237,16 +240,18 @@ h2 {
 #main .kolaz {  display: grid;
     margin: auto;
     width: 100%;
-    max-height: 444px;
-    max-width: 688px;
-    aspect-ratio: 688/444;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+
+
+    aspect-ratio: 688/1776;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "a b "
-      "c d ";
+      "a"
+      "b"
+      "c"
+      "d";
 }  
 #main .kolazA {
     grid-area: a;
@@ -269,7 +274,7 @@ h2 {
     background-size: cover;
 }  
 #main .sideMenu {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     width: 15vw;
@@ -286,7 +291,7 @@ h2 {
 /* Footer Section */
 #footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px 40px;
     justify-content: space-between;
     align-items: center;
@@ -302,6 +307,60 @@ h2 {
 }
 /* End Footer Section */
 
+/* ========================================================================= */
+/* MEDIA QUERY TABLET */
+/* ========================================================================= */
+@media only screen and (min-width: 600px) {   
+    #footer {
+        flex-direction: row;
+    }
+    #footer .videPlayer {
+        margin-top: 40px;
+    }
+    #main .sideMenu {
+        display: flex;
+    }
+    #main .content {
+        width: 85vw;
+    }
+    #hero .heroText p{
+        display: block;
+    }
+    #main .kolaz {  display: grid;
+        margin: auto;
+        width: 100%;
+        max-height: 444px;
+        max-width: 688px;
+        aspect-ratio: 688/444;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "a b "
+          "c d ";
+    }  
+    #main .kolazA {
+        grid-area: a;
+        background-image: url('./assets/boeing.jpg');
+        background-size: cover;
+    }
+    #main .kolazB {
+        grid-area: b;
+        background-image: url('./assets/airbus.jpg');
+        background-size: cover;
+    }  
+    #main .kolazC {
+        grid-area: c;
+        background-image: url('./assets/embraer.jpg');
+        background-size: cover;
+    }  
+    #main .kolazD {
+        grid-area: d;
+        background-image: url('./assets/tupolev.jpg');
+        background-size: cover;
+    } 
+}
 /* ========================================================================= */
 /* MEDIA QUERY DESKTOP */
 /* ========================================================================= */
